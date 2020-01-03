@@ -8,12 +8,8 @@ const AppStack = createStackNavigator({
 });
 const RootAppStack = createStackNavigator(
   {
-    Main: {
-      screen: AppStack,
-    },
-    StatModal: {
-      screen: StatisticPage,
-    },
+    Main: AppStack,
+    StatModal: StatisticPage,
   },
   {
     mode: 'modal',

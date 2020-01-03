@@ -4,6 +4,7 @@ import {Layout, Button, Icon} from 'react-native-ui-kitten';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Container, Row, Col} from '../components/_grid';
 import {TextEl} from '../components/Text';
+import {Banner} from '../components/home/Banner';
 
 const styles = StyleSheet.create({
   mainContainer: {
@@ -19,11 +20,9 @@ const styles = StyleSheet.create({
   menuIcon: {
     width: 48,
     height: 48,
-    transform: [
-      {
-        rotate: '90deg',
-      },
-    ],
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   rightBtn: {
     width: 48,
@@ -103,38 +102,42 @@ export default class HomePage extends React.Component {
     headerStyle: {
       backgroundColor: '#fff',
       color: '#000',
-      height: 120,
       elevation: 0,
     },
     headerLeft: () => {
       return (
-        <TouchableOpacity
-          activeOpacity={0.8}
-          style={{...styles.rightBtn, marginRight: 0}}>
-          <Button
-            appearance="ghost"
-            icon={() => (
-              <Icon
-                pack="feather"
-                name="bar-chart-2"
-                width={32}
-                height={32}
-                fill="#000111"
-                style={styles.menuIcon}
-              />
-            )}
-          />
-        </TouchableOpacity>
+        <Button
+          appearance="ghost"
+          size="large"
+          icon={style => (
+            <Icon
+              width={44}
+              height={44}
+              pack="feather"
+              name="menu"
+              fill="#000111"
+              {...style}
+            />
+          )}
+        />
       );
     },
     headerRight: () => {
       return (
-        <TouchableOpacity activeOpacity={0.8} style={styles.rightBtn}>
-          <Image
-            source={require('../assets/img/placeholder_user.png')}
-            style={styles.rightBtnIcon}
-          />
-        </TouchableOpacity>
+        <Button
+          appearance="ghost"
+          size="large"
+          icon={style => (
+            <Icon
+              width={44}
+              height={44}
+              pack="feather"
+              name="shopping-bag"
+              fill="#000111"
+              {...style}
+            />
+          )}
+        />
       );
     },
   };
@@ -153,6 +156,9 @@ export default class HomePage extends React.Component {
                   <TextEl category="h2" style={{fontWeight: 'bold'}}>
                     Activities
                   </TextEl>
+                  <Banner
+                    imgSource={require('../assets/img/banner/summer_collection.jpg')}
+                  />
                 </Col>
               </Row>
               <Row>

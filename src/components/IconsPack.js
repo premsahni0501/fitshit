@@ -2,6 +2,7 @@ import React from 'react';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FeatherIcons from 'react-native-vector-icons/Feather';
 import EntypoIcons from 'react-native-vector-icons/Entypo';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
 export const MaterialIconsPack = {
   name: 'material',
@@ -14,6 +15,10 @@ export const FeatherIconsPack = {
 export const EntypoIconsPack = {
   name: 'entypo',
   icons: createIconsMap('entypo'),
+};
+export const SimpleLineIconsPack = {
+  name: 'line-icons',
+  icons: createIconsMap('line-icons'),
 };
 
 function createIconsMap(kind) {
@@ -42,6 +47,9 @@ const RenderIcon = ({kind, name, fill, height, ...props}) => {
       break;
     case 'entypo':
       IconPack = EntypoIcons;
+      break;
+    case 'line-icons':
+      IconPack = SimpleLineIcons;
       break;
     default:
       IconPack = FeatherIcons;

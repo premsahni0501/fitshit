@@ -8,6 +8,7 @@ import {
   MaterialIconsPack,
   FeatherIconsPack,
   EntypoIconsPack,
+  SimpleLineIconsPack,
 } from './src/components/IconsPack';
 
 const App = () => {
@@ -15,7 +16,12 @@ const App = () => {
     <>
       <StatusBar barStyle="dark-content" />
       <IconRegistry
-        icons={[MaterialIconsPack, FeatherIconsPack, EntypoIconsPack]}
+        icons={[
+          MaterialIconsPack,
+          FeatherIconsPack,
+          EntypoIconsPack,
+          SimpleLineIconsPack,
+        ]}
       />
       <ApplicationProvider
         mapping={mapping}
